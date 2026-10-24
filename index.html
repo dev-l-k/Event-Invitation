@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Invitation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="panel">
+            <div id="formSide">
+                <h1>Event Invitation</h1>
+                <p class="hint">Fill in the details and get a link you can share to others </p>
+                <div class="field">
+                    <label for="evTitle">Event Title</label>
+                    <input type="text" id="evTitle" placeholder="Birthday, Wedding etc...">
+                </div>
+                <div class="field">
+                    <label for="evHost">Hosted by
+                    </label>
+                    <input type="text" id="evHost" placeholder="Tom, Allen etc..">
+                </div>
+                <div class="two-col">
+                    <div class="field">
+                        <label for="evDate">Date</label>
+                        <input type="date" id="evDate">
+                    </div>
+                    <div class="field">
+                        <label for="evTime">Time</label>
+                        <input type="time" id="evTime">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="evPlace">Location</label>
+                    <input type="text" id="evPlace" placeholder="English villa 954, California etc...">
+                    
+                </div>
+                <div class="field">
+                    <label for="evNote">Notes</label>
+                    <textarea id="evNote" placeholder="Please reach here etc.."></textarea>
+                </div>
+                <button type="button" class="main-btn" onclick="buildInvite()">Create Invitation</button>
+            </div>
+            <div id="previewSide" style="display: none;">
+                <div class="invite-card">
+                    <div class="top-bag">You are invited</div>
+                    <h2 id="showTitle"></h2>
+                    <div class="by-line" id="showHost"></div>
+                    <div class="line-item">
+                        <span class="tag">When</span>
+                        <span class="val" id="showWhen"></span>
+                    </div>
+                    <div class="line-item" id="placeBox">
+                        <span class="tag">Where</span>
+                        <span class="val" id="showPlace"></span>
+                    </div>
+                    <div class="thin-rule"></div>
+                    <p class="note" id="showNote"></p>
+                </div>
+                <button type="button" class="main-btn" onclick="makeLink()">Get share link</button>
+                <button type="button" class="plain-btn" onclick="startOver()">Start a new Invitation</button>
+    
+            </div>
+            <div class="share-area" id="shareArea">
+                <p>Send this link to your guests: </p>
+                <div class="link-holder">
+                    <input type="text" id="linkField" readonly>
+                    <button type="button" onclick="copyLink()">Copy</button>
+
+                </div>
+                <div class="copied" id="copiedNote">Link copied</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
