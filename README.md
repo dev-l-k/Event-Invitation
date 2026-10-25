@@ -24,9 +24,9 @@ if it is not working go to https://dev-l-k.github.io/Event-Invitation
 ---
 ## Screenshots
 ---
-[!Main page](./assets/1.jpg)
+![Main page](./assets/1.jpg)
 ---
-[!Invitation](./assets/2.jpg)
+![lInvitation](./assets/2.jpg)
 
 
 
