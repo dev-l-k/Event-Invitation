@@ -48,7 +48,7 @@ function buildInvite(){
     document.getElementById('formSide').style.display="none";
     document.getElementById('previewSide').style.display='block';
     document.getElementById('shareArea').style.display = 'none';
-    var phone=document.getElementById('evPhone').value.trim().replace(/\D/g,'c');
+    var phone=document.getElementById('evPhone').value.trim().replace(/\D/g,'');
     var email = document.getElementById('evMail').value.trim();
     lastInvite.phone=phone;
     lastInvite.email = email;
@@ -134,12 +134,12 @@ if(location.hash.indexOf('#invite')==0){
                 var r = document.querySelector('input[name="evTheme"][value="' + data.theme + '"]');
             }
             document.getElementById('evPhone').value = data.phone || '';
-            document.getElementById('evEmail').value = data.email || '';
-            
+            document.getElementById('evMail').value = data.email || '';
+
             buildInvite();
             
         }
     }catch(e){
         console.log(e.message);
     }
-}
+}l
