@@ -143,4 +143,4 @@ if(location.hash.indexOf('#invite')==0){
     }catch(e){
         console.log(e.message);
     }
-}l
+}
