@@ -49,7 +49,7 @@ body{
     padding:10px 12px;
     border:1px solid #cfc5b6;
     background:#fff;
-    font-family: Arail, sans-serif;
+    font-family: Arial, sans-serif;
     font-size:15px;
     color:#2f2a24;
 
@@ -98,60 +98,100 @@ body{
 .plain-btn:hover{
     background:gainsboro;
 }
-.invite-card{
-    background:floralwhite;
-    border:1px solid tan;
-    padding:34px 26px;
-    text-align:center;
+.theme-warm {
+    --bg: floralwhite;
+    --border: tan;
+    --text: #3a3228;
+    --sub-text: gray;
+    --accent: peru;
+    --box: oldlace;
+    --box-b: #e5dccb;
 }
-.top-tag{
-    font-family:Arial, sans-serif;
-    font-size:11px;
-    letter-spacing:3px;
-    color:peru;
+
+.theme-midnight {
+    --bg: #1a1e29;
+    --border: #323b4f;
+    --text: #e6ebf5;
+    --sub-text: #9aa9c2;
+    --accent: #e5b95f;
+    --box: #242b3b;
+    --box-b: #3a455c;
+}
+
+.theme-sage {
+    --bg: #f4f7f4;
+    --border: #b8ccb6;
+    --text: #283827;
+    --sub-text: #647d63;
+    --accent: #4f7942;
+    --box: #e9f0e8;
+    --box-b: #cadbc8;
+}
+
+.invite-card {
+    background: var(--bg, floralwhite);
+    border: 1px solid var(--border, tan);
+    color: var(--text, #3a3228);
+    padding: 34px 26px;
+    text-align: center;
+}
+
+.top-tag {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom:14px;
+    margin-bottom: 14px;
+    color: var(--accent, peru);
 }
-.invite-card h2{
-    font-size:27px;
-    color:#3a3228;
+
+.invite-card h2 {
+    color: var(--text, #3a3228);
+    font-size: 27px;
     line-height: 1.3;
     margin-bottom: 6px;
 }
-.by-line{
+
+.by-line {
     font-style: italic;
     font-size: 14px;
-    color:gray;
-    margin-bottom:22px;
+    color: var(--sub-text, gray);
+    margin-bottom: 22px;
 }
-.line-item{
-    background:oldlace;
-    border: 1px solid #e5dccb;
-    padding:12px 14px;
+
+.line-item {
+    background: var(--box, oldlace);
+    border: 1px solid var(--box-b, #e5dccb);
+    padding: 12px 14px;
     margin-bottom: 10px;
     text-align: left;
 }
-.line-item .tag{
-    display:block;
+
+.line-item .tag {
+    display: block;
     font-family: Arial, sans-serif;
     font-size: 10px;
-    letter-spacing: 1;
-    color:peru;
+    letter-spacing: 1px;
+    color: var(--accent, peru);
     text-transform: uppercase;
-    margin-bottom:3px;
+    margin-bottom: 3px;
 }
-.line-item .val{
-    font-size:15px;
-    color:#3a3228;
+
+.line-item .val {
+    font-size: 15px;
+    color: var(--text, #3a3228);
     word-break: break-word;
 }
-.note{
-    font-style:italic;
-    font-size:15px;
-    color:dimgray;
+
+.note {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--sub-text, dimgray);
     line-height: 1.6;
-    margin:20px 0;
+    margin: 20px 0;
 }
+
+
 .share-area{
     display:none;
     background:linen;

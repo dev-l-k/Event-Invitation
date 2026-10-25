@@ -5,14 +5,17 @@ function buildInvite(){
         alert("Give the details correctly..");
         return;
     }
+    var selectedTheme = document.querySelector('input[name="evTheme"]:checked').value;
     lastInvite={
         title:t,
         host:document.getElementById('evHost').value,
         date:document.getElementById('evDate').value,
         time:document.getElementById('evTime').value,
         location:document.getElementById('evPlace').value,
-        message:document.getElementById('evNote').value
+        message:document.getElementById('evNote').value,
+        theme: selectedTheme
     };
+    document.getElementById('inviteCard').className = 'invite-card '+selectedTheme;
     document.getElementById('showTitle').innerHTML=lastInvite.title;
     document.getElementById('showHost').innerHTML=lastInvite.host?'Hosted by '+ lastInvite.host:"";
     document.getElementById('showNote').innerHTML = lastInvite.message || '';
@@ -105,6 +108,9 @@ if(location.hash.indexOf('#invite')==0){
             document.getElementById('evTime').value=data.time||'';
             document.getElementById('evPlace').value=data.location||'';
             document.getElementById('evNote').value=data.message||'';
+            if(data.theme){
+                var r = document.querySelector('input[name="evTheme"][value="' + data.theme + '"]');
+            }
             buildInvite();
             
         }

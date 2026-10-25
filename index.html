@@ -40,10 +40,18 @@
                     <label for="evNote">Notes</label>
                     <textarea id="evNote" placeholder="Please reach here etc.."></textarea>
                 </div>
+                <div class="field">
+                    <label for="ev-theme">Card Theme</label>
+                    <div class="two-col">
+                        <label><input type="radio" name="evTheme" value="theme-warm" checked>Warm</label>
+                        <label><input type="radio" name="evTheme" value="theme-midnight">Midnight</label>
+                        <label><input type="radio" name="enTheme" value="theme-sage">Sage</label>
+                    </div>
+                </div>
                 <button type="button" class="main-btn" onclick="buildInvite()">Create Invitation</button>
             </div>
             <div id="previewSide" style="display: none;">
-                <div class="invite-card">
+                <div class="invite-card" id="inviteCard">
                     <div class="top-bag">You are invited</div>
                     <h2 id="showTitle"></h2>
                     <div class="by-line" id="showHost"></div>
