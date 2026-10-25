@@ -15,6 +15,8 @@ function buildInvite(){
     };
     document.getElementById('showTitle').innerHTML=lastInvite.title;
     document.getElementById('showHost').innerHTML=lastInvite.host?'Hosted by '+ lastInvite.host:"";
+    document.getElementById('showNote').innerHTML = lastInvite.message || '';
+
     var when='-';
     if(lastInvite.date){
         var p = lastInvite.date.split('-');
