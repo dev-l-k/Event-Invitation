@@ -56,7 +56,7 @@ function buildInvite(){
     var wa = document.getElementById('waBtn');
     var mail = document.getElementById('mailBtn');
     wa.style.display=phone?'block':'none';
-    mail.style.display= mail?'block':'none';
+    mail.style.display= email?'block':'none';
     if(phone){
         wa.href = "https://wa.me/"+phone+"?text="+msg;
     }
@@ -132,6 +132,7 @@ if(location.hash.indexOf('#invite')==0){
             document.getElementById('evNote').value=data.message||'';
             if(data.theme){
                 var r = document.querySelector('input[name="evTheme"][value="' + data.theme + '"]');
+                if(r) r.checked = true;
             }
             document.getElementById('evPhone').value = data.phone || '';
             document.getElementById('evMail').value = data.email || '';
