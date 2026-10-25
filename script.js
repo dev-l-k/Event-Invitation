@@ -48,6 +48,28 @@ function buildInvite(){
     document.getElementById('formSide').style.display="none";
     document.getElementById('previewSide').style.display='block';
     document.getElementById('shareArea').style.display = 'none';
+    var phone=document.getElementById('evPhone').value.trim().replace(/\D/g,'c');
+    var email = document.getElementById('evMail').value.trim();
+    lastInvite.phone=phone;
+    lastInvite.email = email;
+    var msg = encodeURIComponent("Respond for " + lastInvite.title);
+    var wa = document.getElementById('waBtn');
+    var mail = document.getElementById('mailBtn');
+    wa.style.display=phone?'block':'none';
+    mail.style.display= mail?'block':'none';
+    if(phone){
+        wa.href = "https://wa.me/"+phone+"?text="+msg;
+    }
+    if(mail){
+        mail.href= "mailto:"+ email +"?subject="+msg;
+    }
+    var rsvpElement = document.getElementById('rsvpArea');
+    if (phone || email) {
+        rsvpElement.style.display = 'block';
+    } else {
+        rsvpElement.style.display = 'none';
+    }
+
 
 }
 function makeLink(){
@@ -111,6 +133,9 @@ if(location.hash.indexOf('#invite')==0){
             if(data.theme){
                 var r = document.querySelector('input[name="evTheme"][value="' + data.theme + '"]');
             }
+            document.getElementById('evPhone').value = data.phone || '';
+            document.getElementById('evEmail').value = data.email || '';
+            
             buildInvite();
             
         }
